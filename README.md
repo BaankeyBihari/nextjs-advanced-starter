@@ -9,7 +9,7 @@ An opinionated starter skeleton with advanced features for Next.js.
 Use Tailwind CSS, ESLint, Prettier & absolute imports instantly.
 Easily extendable zero-config template for pros and beginners.
 
-Check out the [Demo website.](https://nextjs-advanced-starter.vercel.app/)
+Check out the [Demo website.](https://nextjs-advanced-starter.baankeybihari.com/)
 
 ## Table of Contents
 
