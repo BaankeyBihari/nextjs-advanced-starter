@@ -1,5 +1,9 @@
 # Next.js Advanced Starter 🚀
 
+This repository is fork of [Next.js Advanced Starter](https://github.com/agcty/nextjs-advanced-starter) by [Alex](https://github.com/agcty)
+
+Please check [Post Clone Optional](#post-clone-section) for my contributions
+
 An opinionated starter skeleton with advanced features for Next.js.
 
 Use Tailwind CSS, ESLint, Prettier & absolute imports instantly.
@@ -15,6 +19,7 @@ Check out the [Demo website.](https://nextjs-advanced-starter.vercel.app/)
   - [Features](#features)
   - [Who this template is for](#who-this-template-is-for)
   - [How to use](#how-to-use)
+    - [Post Clone Optional](#post-clone-optional)
   - [Explanation why some dependencies are in this template](#explanation-why-some-dependencies-are-in-this-template)
     - [@tailwindcss/forms](#tailwindcssforms)
     - [@tailwindcss/typography](#tailwindcsstypography)
@@ -82,6 +87,50 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+### Post Clone Optional
+
+Below commands are meant for `Linux/Unix` based systems
+
+For `yarn`
+
+```bash
+# clean package.json
+dependencies=$(awk 'BEGIN{flag=0} /dependencies/{flag=1; next} /\}/{flag=0} flag{print $1}' package.json | cut -f 2 -d '"')
+devDependencies=$(awk 'BEGIN{flag=0} /devDependencies/{flag=1; next} /\}/{flag=0} flag{print $1}' package.json | cut -f 2 -d '"')
+awk 'BEGIN{flag=1} /dependencies/{print; flag=0} /\}/{flag=1} flag{print}' package.json | awk 'BEGIN{flag=1} /devDependencies/{print; flag=0} /\}/{flag=1} flag{print}' | tee new_package.json
+cat new_package.json > package.json
+# install dependencies and devDependencies
+yarn add ${dependencies}
+yarn add -D ${devDependencies}
+# clean old or unwanted files
+rm new_package.json
+rm -rf node_modules
+rm -rf yarn.lock
+rm package-lock.json
+# install in one-shot
+yarn install
+```
+
+For `npm`
+
+```bash
+# clean package.json
+dependencies=$(awk 'BEGIN{flag=0} /dependencies/{flag=1; next} /\}/{flag=0} flag{print $1}' package.json | cut -f 2 -d '"')
+devDependencies=$(awk 'BEGIN{flag=0} /devDependencies/{flag=1; next} /\}/{flag=0} flag{print $1}' package.json | cut -f 2 -d '"')
+awk 'BEGIN{flag=1} /dependencies/{print; flag=0} /\}/{flag=1} flag{print}' package.json | awk 'BEGIN{flag=1} /devDependencies/{print; flag=0} /\}/{flag=1} flag{print}' | tee new_package.json
+cat new_package.json > package.json
+# install dependencies and devDependencies
+npm -i ${dependencies}
+npm -i -D ${devDependencies}
+# clean old or unwanted files
+rm new_package.json
+rm -rf node_modules
+rm -rf yarn.lock
+rm package-lock.json
+# install in one-shot
+npm install
+```
 
 ## Explanation why some dependencies are in this template
 
@@ -172,7 +221,6 @@ Tip: The font you choose should have at least these weights: 400, 500, 600, 700,
 If you need additional rules or want to turn off specific rules just edit `.eslintrc.js`. Only change the order of plugins and items in the "extends" array if you know what you're doing as this can have unexpected side effects: Items on the bottom ovverride the former items. This is the intended behaviour so you can extend and configure existing rules easily. For example first we add the popular airbnb rules and then have prettier ovverride some of these rules so code formatting doesn't interfere with other rules.
 
 ### Adding new absolute import paths
-
 
 This will instruct Next.js to set up a new alias to your specific folder. If you try to import a file with @myalias now it will still throw an error however because we need to tell our IDE that this path actually exists:
 

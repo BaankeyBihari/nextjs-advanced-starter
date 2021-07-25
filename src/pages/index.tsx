@@ -31,6 +31,23 @@ export default function Home() {
             Easily extendable zero-config template for pros and beginners.
           </h2>
 
+          <p className="mt-6 text-xs font-medium text-center text-gray-600">
+            Fork of{" "}
+            <a
+              className="font-medium text-blue-600 transition duration-150 ease-in-out hover:text-blue-500 focus:outline-none focus:underline"
+              href="https://github.com/agcty/nextjs-advanced-starter"
+            >
+              "Next.js advanced start template"
+            </a>{" "}
+            by{" "}
+            <a
+              className="font-medium text-blue-600 transition duration-150 ease-in-out hover:text-blue-500 focus:outline-none focus:underline"
+              href="https://twitter.com/agctyz"
+            >
+              @agctyz
+            </a>
+          </p>
+
           <div className="px-4 sm:px-0">
             <section
               className="w-full mt-6 bg-white rounded-lg grid grid-cols-1 sm:mt-20 sm:grid-cols-2 sm:w-1000"
@@ -71,7 +88,7 @@ export default function Home() {
                 <h3 className="text-3xl font-bold">Get it 👇</h3>
 
                 <span className="inline-flex rounded-md shadow-sm">
-                  <Link href="https://github.com/agcty/nextjs-advanced-starter">
+                  <Link href="https://github.com/baankeybihari/nextjs-advanced-starter">
                     <a
                       type="button"
                       className="inline-flex items-center px-4 py-4 font-medium text-white bg-blue-600 border border-transparent leading-6 transition duration-150 ease-in-out rounded-md sm:px-10 hover:bg-blue-500 focus:outline-none focus:border-blue-700 focus:ring-blue-400 active:bg-blue-700 focus:ring-4"
@@ -86,9 +103,9 @@ export default function Home() {
               Built by{" "}
               <a
                 className="font-medium text-blue-600 transition duration-150 ease-in-out hover:text-blue-500 focus:outline-none focus:underline"
-                href="https://twitter.com/agctyz"
+                href="https://twitter.com/baankeybihari"
               >
-                @agctyz
+                @BaankeyBihari
               </a>
             </p>
           </div>
